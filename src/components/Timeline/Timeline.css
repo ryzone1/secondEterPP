@@ -1,0 +1,124 @@
+.timeline-section {
+  padding: 80px 20px;
+  background: var(--bg-light, #f8f9fa);
+}
+
+.timeline-section .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-section .section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 60px;
+  color: var(--text-primary, #2c3e50);
+  letter-spacing: -0.5px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border-color, #e0e0e0);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 40px;
+  padding-left: 30px;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -30px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--border-color, #e0e0e0);
+  border: 3px solid var(--bg-light, #f8f9fa);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.timeline-item.completed .timeline-dot {
+  background: var(--color-accent, #e74c3c);
+  border-color: var(--color-accent, #e74c3c);
+  box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.2);
+}
+
+.timeline-content {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.timeline-number {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary, #7f8c8d);
+  min-width: 30px;
+  letter-spacing: 0.5px;
+}
+
+.timeline-text {
+  font-size: 1.1rem;
+  color: var(--text-primary, #2c3e50);
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.timeline-item.completed .timeline-text {
+  text-decoration: line-through;
+  color: var(--text-secondary, #7f8c8d);
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .timeline-section {
+    padding: 60px 16px;
+  }
+
+  .timeline-section .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+
+  .timeline {
+    padding-left: 20px;
+  }
+
+  .timeline-item {
+    padding-left: 20px;
+    padding-bottom: 30px;
+  }
+
+  .timeline-dot {
+    left: -22px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .timeline-number {
+    font-size: 0.7rem;
+    min-width: 24px;
+  }
+
+  .timeline-text {
+    font-size: 1rem;
+  }
+}

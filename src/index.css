@@ -1,20 +1,12 @@
-/* Reset and base styles */
+@import './styles/variables.css';
+
+/* ========================================
+   Reset и базовые стили
+   ======================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-:root {
-  --color-bg: #fafbf9;
-  --color-text: #1e1e1e;
-  --color-text-muted: #5a5a5a;
-  --color-accent: #c5ded4;
-  --color-accent-hover: #b0cfc3;
-  --color-border: #e8ede4;
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --max-width: 1200px;
-  --spacing-section: 80px;
 }
 
 html {
@@ -51,29 +43,34 @@ img {
   height: auto;
 }
 
+/* ========================================
+   Утилиты
+   ======================================== */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 clamp(16px, 4vw, 24px);
+  padding: 0 clamp(var(--space-md), 4vw, var(--space-lg));
   width: 100%;
 }
 
 .section-title {
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
-  font-weight: 600;
+  font-size: clamp(var(--font-size-2xl), 5vw, var(--font-size-4xl));
+  font-weight: var(--font-weight-semibold);
   letter-spacing: -0.02em;
-  margin-bottom: clamp(32px, 5vh, 48px);
+  margin-bottom: clamp(var(--space-xl), 5vh, var(--space-2xl));
   text-align: center;
   word-break: break-word;
 }
 
-/* Buttons */
+/* ========================================
+   Кнопки
+   ======================================== */
 .btn {
   display: inline-block;
-  padding: clamp(12px, 2vh, 16px) clamp(20px, 4vw, 36px);
-  border-radius: 100px;
-  font-weight: 500;
-  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+  padding: clamp(var(--space-md), 2vh, var(--space-lg)) clamp(var(--space-lg), 4vw, var(--space-2xl));
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-medium);
+  font-size: clamp(var(--font-size-base), 1.2vw, var(--font-size-lg));
   transition: all 0.2s ease;
   text-align: center;
   cursor: pointer;
@@ -83,8 +80,8 @@ img {
 @media (max-width: 480px) {
   .btn {
     white-space: normal;
-    padding: 12px 20px;
-    font-size: 0.95rem;
+    padding: var(--space-md) var(--space-lg);
+    font-size: var(--font-size-base);
     width: 100%;
     max-width: 280px;
   }
@@ -92,13 +89,13 @@ img {
 
 .btn-primary {
   background-color: var(--color-accent);
-  color: #1e1e1e;
+  color: var(--color-text-white);
 }
 
 .btn-primary:hover {
   background-color: var(--color-accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(197, 222, 212, 0.3);
+  box-shadow: 0 8px 24px rgba(79, 138, 139, 0.3);
 }
 
 .btn-secondary {
@@ -112,14 +109,16 @@ img {
   transform: translateY(-2px);
 }
 
-/* Mobile-first responsive fixes */
+/* ========================================
+   Mobile-first адаптивность
+   ======================================== */
 @media (max-width: 480px) {
   .container {
-    padding: 0 16px;
+    padding: 0 var(--space-md);
   }
 
   .section-title {
-    font-size: 1.6rem;
-    margin-bottom: 24px;
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-lg);
   }
 }
